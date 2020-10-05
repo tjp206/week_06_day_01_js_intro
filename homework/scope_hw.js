@@ -151,4 +151,60 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 
-// 
+// The murderer is 'Mr Green' because the changeMurderer function is called before the console.log(?)
+
+// Episode 8
+
+const scenario = {
+    murderer: 'Mrs. Peacock',
+    room: 'Conservatory',
+    weapon: 'Lead Pipe'
+  };
+  
+  const changeScenario = function() {
+    scenario.murderer = 'Mrs. Peacock';
+    scenario.room = 'Dining Room';
+  
+    const plotTwist = function(room) {
+      if (scenario.room === room) {
+        scenario.murderer = 'Colonel Mustard';
+      }
+  
+      const unexpectedOutcome = function(murderer) {
+        if (scenario.murderer === murderer) {
+          scenario.weapon = 'Candle Stick';
+        }
+      }
+  
+      unexpectedOutcome('Colonel Mustard');
+    }
+  
+    plotTwist('Dining Room');
+  }
+  
+  const declareWeapon = function() {
+    return `The weapon is ${scenario.weapon}.`
+  }
+  
+  changeScenario();
+  const verdict = declareWeapon();
+  console.log(verdict);
+
+  // The weapon is 'candle stick' because weapon is reassigned a new value in the unexpectedOutcome
+
+  // Episode 9 
+
+let murderer = 'Professor Plum';
+
+if (murderer === 'Professor Plum') {
+  let murderer = 'Mrs. Peacock';
+}
+
+const declareMurderer = function() {
+  return `The murderer is ${murderer}.`;
+}
+
+const verdict = declareMurderer();
+console.log(verdict);
+
+// The murderer is Professor Plum because 'Mrs Peacock' is only declared locally inside the if statement
