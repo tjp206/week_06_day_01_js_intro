@@ -30,11 +30,41 @@ sports.push('darts');
 //     console.log(upperCaseSport);
 // }
 
-for (var i = 0; i < sports.length; i++) {  // for (initialise counter, condition, increment counter)
-    var currentSport = sports[i];
-    var upperCaseSport = currentSport.toUpperCase();
-    console.log(upperCaseSport);
+// for (var i = 0; i < sports.length; i++) {  // for (initialise counter, condition, increment counter)
+//     var currentSport = sports[i];
+//     var upperCaseSport = currentSport.toUpperCase();
+//     console.log(upperCaseSport);
+// }
+
+var movie = {                               // creating an object/dictionary
+    title: 'It\'s A Wonderful Life',
+    year: 1946,
+    language: 'Spanish'
+};
+
+movie.cast = ['James Stewart', 'Donna Reed'];
+movie.language = 'English';
+movie['subtitle-language'] =  'German';
+// delete movie.year;
+
+movie.ratings = {
+    critic: 94,
+    audience: 95
+};
+
+var audienceRating = movie.ratings.audience;
+console.log('Audience Rating:', audienceRating);
+
+// console.log('Movie:', movie);
+
+for (var key in movie) {
+    var value = movie[key]
+    console.log(`The ${key} is ${value}`);
 }
+
+var keys = Object.keys(movie);
+console.log('Keys:', keys);
+
 
 
 
