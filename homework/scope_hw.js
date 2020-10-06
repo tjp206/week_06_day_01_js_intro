@@ -151,7 +151,7 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 
-// The murderer is 'Mr Green' because the changeMurderer function is called before the console.log(?)
+// The murderer is 'Mr Green' because of the way murderer is defined in changeMurderer function it'll be permanently changed from where it is in the order of the functions
 
 // Episode 8
 
